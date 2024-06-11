@@ -2,14 +2,15 @@ import requests
 import pandas as pd
 
 def queryMachineRefs(headers):
-    query = (
-        "{machines(where: {decommissionedAt: {_is_null: true}}) {\n"
-        "  name\n"
-        "  machineRef\n"
-        "  machineId\n"
-        "  }\n"
-        "}\n"
-    )
+    query = """ 
+        {
+         machines(where: {decommissionedAt: {_is_null: true}}) {
+          name
+          machineRef
+          machineId
+          }
+        }
+    """
 
     response = requests.post('https://api.machinemetrics.com/proxy/graphql', json={'query':query}, headers=headers)
     data = response.json()
