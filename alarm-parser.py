@@ -8,7 +8,7 @@ from utils import queryMachineRefs, getSources, identifySources, getsourceId, ge
 
 load_dotenv()
 api_key = os.getenv('deacero_api_key')
-st.write("Hola Perrossss")
+st.write("Hola Perrosssss")
 
 if api_key:
     st.write("API Key loaded successfully!")
